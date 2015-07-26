@@ -1,11 +1,44 @@
-import java.util.Scanner;
+import java.io.*;
 
 public class main {
 	public static void main(String[] args) {
 		
-		Scanner teclado = new Scanner(System.in);
-		String expresion = teclado.nextLine();
-		postfix post = new postfix();
+		
+		
+      File archivo = null;
+      FileReader fr = null;
+      BufferedReader br = null;
+ 
+      try {
+         // Apertura del fichero y creacion de BufferedReader para poder
+         // hacer una lectura comoda (disponer del metodo readLine()).
+         archivo = new File ("C:\\archivo.txt");
+         fr = new FileReader (archivo);
+         br = new BufferedReader(fr);
+ 
+         // Lectura del fichero
+         String expresion;
+         String linea;
+         while((linea=br.readLine())!=null)
+         expresion = expresion +""+ linea
+      }
+      catch(Exception e){
+         e.printStackTrace();
+      }finally{
+         // En el finally cerramos el fichero, para asegurarnos
+         // que se cierra tanto si todo va bien como si salta 
+         // una excepcion.
+         try{                    
+            if( null != fr ){   
+               fr.close();     
+            }                  
+         }catch (Exception e2){ 
+            e2.printStackTrace();
+         }
+      }
+		
+		
+	
 		double resultado = post.evaluar(expresion);
 		
 		System.out.println(resultado);	
