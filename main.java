@@ -8,19 +8,24 @@ public class main {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
- 
+      postfix Postfix = new postfix();
       try {
          // Apertura del fichero y creacion de BufferedReader para poder
          // hacer una lectura comoda (disponer del metodo readLine()).
-         archivo = new File ("C:\\archivo.txt");
+         archivo = new File ("datos.txt");
          fr = new FileReader (archivo);
          br = new BufferedReader(fr);
  
          // Lectura del fichero
-         String expresion;
+         
          String linea;
-         while((linea=br.readLine())!=null)
-         expresion = expresion +""+ linea
+         String expresion = "";
+         while((linea=br.readLine())!=null){
+         expresion = linea;
+		 System.out.println(expresion);
+         double resultado = Postfix.evaluar(expresion);
+ 		 System.out.println("Resultado: "+resultado);
+		 }
       }
       catch(Exception e){
          e.printStackTrace();
@@ -39,9 +44,7 @@ public class main {
 		
 		
 	
-		double resultado = post.evaluar(expresion);
-		
-		System.out.println(resultado);	
+			
 		
 		
 	}
