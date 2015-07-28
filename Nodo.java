@@ -1,8 +1,9 @@
 public class Nodo {
+	//Atributos
 	Object Content;
 	Nodo Siguiente;
 	
-	
+	//Constructores
 	public Nodo() {
 		Content = null;
 		Siguiente = null;
@@ -12,6 +13,7 @@ public class Nodo {
 		this.Valor = valor;
 		Siguiente = null;
 	}
+	//Gets y Sets
 	public Object getContent() {
 		return Content;
 	}
