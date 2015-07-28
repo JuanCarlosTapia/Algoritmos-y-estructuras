@@ -8,7 +8,7 @@ public class main {
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
-      postfix Postfix = new postfix();
+      postfix Postfix = new postfix(); // Se crea la clase donde se realiza el calculo.
       try {
          // Apertura del fichero y creacion de BufferedReader para poder
          // hacer una lectura comoda (disponer del metodo readLine()).
@@ -20,7 +20,7 @@ public class main {
          
          String linea;
          String expresion = "";
-         while((linea=br.readLine())!=null){
+         while((linea=br.readLine())!=null){ // Lee cada linea del archivo.
          expresion = linea;
 		 System.out.println(expresion);
          double resultado = Postfix.evaluar(expresion);
