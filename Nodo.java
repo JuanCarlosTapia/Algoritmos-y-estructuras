@@ -1,22 +1,22 @@
 public class Nodo {
-	int Valor;
+	Object Content;
 	Nodo Siguiente;
 	
 	
 	public Nodo() {
-		Valor = 0;
+		Content = null;
 		Siguiente = null;
 	}
 	
-	public Nodo(int valor) {
+	public Nodo(Object content) {
 		this.Valor = valor;
 		Siguiente = null;
 	}
-	public int getValor() {
-		return Valor;
+	public Object getContent() {
+		return Content;
 	}
-	public void setValor(int valor) {
-		this.Valor = valor;
+	public void setContent(Object content) {
+		this.Content = content;
 	}
 	public Nodo getSiguiente() {
 		return Siguiente;
